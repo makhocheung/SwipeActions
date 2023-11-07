@@ -180,7 +180,7 @@ struct SwipeAction<V1: View, V2: View>: ViewModifier {
             .measureSize {
                 contentWidth = $0.width
             }
-            .gesture(
+            .simultaneousGesture(
                 DragGesture(minimumDistance: 15, coordinateSpace: .local)
                     .updating($dragGestureActive) { value, state, transaction in
                         state = true
